@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wÿ Sommer®</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <script src="./index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c8fc247de9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+        emailjs.init({
+            publicKey: "V2Rvj4fIJXk8qP4J3",
+        });
+    })();
+</script>
+  </head>
+  <body>
+    <section id="landing" onmousemove="moveBackground(event)">
+      <nav>
+        <h1 class="logo">Wÿ Sommer®</h1>
+        <p class="sun" onclick="toggleContrast()">🔆</p>
+        <p class="earth" onclick="toggleContrast()">🌍️</p>
+        <ul class="nav__link--list">
+          <li class="nav__link--li">
+            <a
+              href="#"
+              class="nav__link link__hover-effect link__hover-effect--first"
+              >about</a
+            >
+          </li>
+          <li class="nav__link--li">
+            <a
+              href="#projects"
+              class="nav__link nav__link1 link__hover-effect link__hover-effect--second"
+              >projects</a
+            >
+          </li>
+          <li class="nav__link--li">
+            <a
+              href="#"
+              class="nav__link nav__link2 link__hover-effect link__hover-effect--third"
+              onclick="toggleModal()"
+              >contact</a
+            >
+          </li>
+        </ul>
+        <div class="enable__next-mode enable__sun">ENABLE SUN MODE</div>
+        <div class="enable__next-mode enable__earth">ENABLE EARTH MODE</div>
+      </nav>
+      <header>
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title color2">I'm Wyatt.</h1>
+          <p class="header__para">
+            I'm a <b class="color2">Frontend Software Engineer</b> with a strong
+            passion for building web applications with great frontend
+            experiences.
+            <br />
+            <span class="header__para--about-line">
+              Here's a bit more
+              <b class="color2 header__para--about-link click" onclick="toggleModal()"
+                >about me<i class="fa-solid fa-plus"></i
+              ></b>
+            </span>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://linkedin.com/in/wysommer"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/wysommer" class="social__link click">
+              <i class="fa-brands fa-github-alt"></i>
+            </a>
+            <a href="#" class="social__link click">
+              <i class="fa-regular fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#landing">
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">
+            here's a bit about me...
+          </h3>
+          <h4 class="modal__subtitle modal__subtitle--about color2">
+            Frontend Software Engineer
+          </h4>
+          <p class="modal__para">
+            I'm a 28 year old American frontend software engineer with a <b>strong
+            passion</b> for developing <span class="color2">beautiful frontend user experiences.</span>
+            <br />
+            <br />
+            I'm currently working on developing a software for the architecture
+            industry, and I'm always <b>learning new things</b> by <span class="color2">solving difficult
+            engineering problems.</span>
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language--wrapper">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" class="modal__language">
+                <h5 class="modal__language--title">HTML5</h5>
+            </figure>
+            <figure class="modal__language--wrapper">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" class="modal__language">
+                <h5 class="modal__language--title">CSS3</h5>
+            </figure>
+            <figure class="modal__language--wrapper">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="modal__language">
+                <h5 class="modal__language--title">JavaScript</h5>
+            </figure>
+            <figure class="modal__language--wrapper">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="REACT" class="modal__language">
+                <h5 class="modal__language--title">React.js</h5>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+            <h3 class="modal__title modal__title--contact color2">Let's have a chat!</h3>
+            <h4 class="modal__subtitle modal__subtitle--contact">I'm currently open to new opportunities.</h4>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label color2">Name</label>
+                    <input type="text" name="user_name" class="input" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label color2">Email</label>
+                    <input type="email" name="user_email" class="input" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label color2">Company</label>
+                    <input type="text" name="user_company" class="input" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label color2">Message</label>
+                    <textarea type="text" name="message" class="input" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send it my way!
+                </button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message. Looking forward to speaking with you soon!
+            </div>
+            <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+        </div>
+      </div>
+      <img src="./assets/circle.svg" class="shape shape--0">
+      <img src="./assets/semicircle.svg" class="shape shape--1">
+      <img src="./assets/triangle.svg" class="shape shape--2">
+      <img src="./assets/squiggly.svg" class="shape shape--3">
+      <img src="./assets/circle.svg" class="shape shape--4">
+      <img src="./assets/semicircle.svg" class="shape shape--5">
+      <img src="./assets/circle.svg" class="shape shape--6">
+      <img src="./assets/triangle.svg" class="shape shape--7">
+      <img src="./assets/squiggly.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="color2">Projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project__li">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/Frame1.jpg"
+                  alt="project image"
+                  class="project__img"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title click">
+                    earth skincare
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML5, CSS3, Javascript
+                  </h4>
+                  <p class="project__description--para">
+                    an e-commerce website for natural skincare products.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      target="_blank"
+                      href="https://github.com/wysommer/earth-skin"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github-alt click"></i>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://wysommer.github.io/earth-skin/"
+                      class="project__description--link"
+                    >
+                      <i class="fas fa-link click"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project__li">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/Frame3.jpg"
+                  alt="project image"
+                  class="project__img"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title click">
+                    Treact example
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML5, CSS3, Javascript
+                  </h4>
+                  <p class="project__description--para">
+                    a replica of a react templates website.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      target="_blank"
+                      href="https://github.com/wysommer/Treact__example"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github-alt click"></i>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://wysommer.github.io/Treact__example/"
+                      class="project__description--link"
+                    >
+                      <i class="fas fa-link click"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project__li">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/Frame2.jpg"
+                  alt="project image"
+                  class="project__img"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title click">
+                    portfolio 01
+                  </h3>
+                  <h4 class="project__description--sub-title">HTML5, CSS3</h4>
+                  <p class="project__description--para">e-portfolio v1</p>
+                  <div class="project__description--links">
+                    <a
+                      target="_blank"
+                      href="https://github.com/wysommer/portfolio_01"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github-alt click"></i>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://wysommer.github.io/portfolio_01/"
+                      class="project__description--link"
+                    >
+                      <i class="fas fa-link click"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer onmousemove="moveBackground(event)">
+        <div class="container">
+            <div class="row footer__row">
+                <a href="#landing" class="footer__title">Wÿ</a>
+                <ul class="footer__link--list">
+                    <li class="footer__list--li">
+                        <a href="#" class="footer__link link__hover-effect link__hover-effect--first" onclick="toggleModal()">about</a>
+                    </li>
+                    <li class="footer__list--li">
+                        <a href="#projects" class="footer__link link__hover-effect link__hover-effect--second">projects</a>
+                    </li>
+                    <li class="footer__list--li">
+                        <a href="#" class="footer__link link__hover-effect link__hover-effect--third">resumé</a>
+                    </li>
+                    <li class="footer__list--li">
+                        <a href="#" class="footer__link link__hover-effect link__hover-effect--first" onclick="toggleModal()">contact</a>
+                    </li>
+                </ul>
+                <p class="footer__copyright">©2024 | Made by Wyatt Sommer®</p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
